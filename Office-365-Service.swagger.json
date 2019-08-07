@@ -1,0 +1,464 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Office 365 Service Communications API",
+    "description": "Connector to get Office 365 Service status, history and messages",
+    "version": "1.0"
+  },
+  "host": "manage.office.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/api/v1.0/common/ServiceComms/CurrentStatus": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "FeatureStatus": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "FeatureDisplayName": {
+                              "type": "string",
+                              "description": "FeatureDisplayName"
+                            },
+                            "FeatureName": {
+                              "type": "string",
+                              "description": "FeatureName"
+                            },
+                            "FeatureServiceStatus": {
+                              "type": "string",
+                              "description": "FeatureServiceStatus"
+                            },
+                            "FeatureServiceStatusDisplayName": {
+                              "type": "string",
+                              "description": "FeatureServiceStatusDisplayName"
+                            }
+                          }
+                        },
+                        "description": "FeatureStatus"
+                      },
+                      "Id": {
+                        "type": "string",
+                        "description": "Id"
+                      },
+                      "IncidentIds": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "IncidentIds"
+                      },
+                      "Status": {
+                        "type": "string",
+                        "description": "Status"
+                      },
+                      "StatusDisplayName": {
+                        "type": "string",
+                        "description": "StatusDisplayName"
+                      },
+                      "StatusTime": {
+                        "type": "string",
+                        "description": "StatusTime"
+                      },
+                      "Workload": {
+                        "type": "string",
+                        "description": "Workload"
+                      },
+                      "WorkloadDisplayName": {
+                        "type": "string",
+                        "description": "WorkloadDisplayName"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Current Status",
+        "description": "Get current status for services in Office 365",
+        "operationId": "GetCurrentStatus",
+        "x-ms-visibility": "important",
+        "parameters": []
+      }
+    },
+    "/api/v1.0/common/ServiceComms/Services": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Id": {
+                        "type": "string",
+                        "description": "Id"
+                      },
+                      "DisplayName": {
+                        "type": "string",
+                        "description": "DisplayName"
+                      },
+                      "FeatureNames": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "FeatureNames"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Services",
+        "description": "Get all services available in Office 365 tenant",
+        "operationId": "GetServices",
+        "parameters": [],
+        "x-ms-visibility": "important"
+      }
+    },
+    "/api/v1.0/common/ServiceComms/HistoricalStatus": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "FeatureStatus": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "FeatureDisplayName": {
+                              "type": "string",
+                              "description": "FeatureDisplayName"
+                            },
+                            "FeatureName": {
+                              "type": "string",
+                              "description": "FeatureName"
+                            },
+                            "FeatureServiceStatus": {
+                              "type": "string",
+                              "description": "FeatureServiceStatus"
+                            },
+                            "FeatureServiceStatusDisplayName": {
+                              "type": "string",
+                              "description": "FeatureServiceStatusDisplayName"
+                            }
+                          }
+                        },
+                        "description": "FeatureStatus"
+                      },
+                      "Id": {
+                        "type": "string",
+                        "description": "Id"
+                      },
+                      "IncidentIds": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "IncidentIds"
+                      },
+                      "Status": {
+                        "type": "string",
+                        "description": "Status"
+                      },
+                      "StatusDisplayName": {
+                        "type": "string",
+                        "description": "StatusDisplayName"
+                      },
+                      "StatusTime": {
+                        "type": "string",
+                        "description": "StatusTime"
+                      },
+                      "Workload": {
+                        "type": "string",
+                        "description": "Workload"
+                      },
+                      "WorkloadDisplayName": {
+                        "type": "string",
+                        "description": "WorkloadDisplayName"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Historical Status",
+        "description": "Get historical status for services in Office 365",
+        "operationId": "GetHistoricalStatus",
+        "x-ms-visibility": "important",
+        "parameters": []
+      }
+    },
+    "/api/v1.0/common/ServiceComms/Messages": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "AffectedWorkloadDisplayNames": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "AffectedWorkloadDisplayNames"
+                      },
+                      "AffectedWorkloadNames": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "AffectedWorkloadNames"
+                      },
+                      "Status": {
+                        "type": "string",
+                        "description": "Status"
+                      },
+                      "Workload": {
+                        "type": "string",
+                        "description": "Workload"
+                      },
+                      "WorkloadDisplayName": {
+                        "type": "string",
+                        "description": "WorkloadDisplayName"
+                      },
+                      "ActionType": {
+                        "type": "string",
+                        "description": "ActionType"
+                      },
+                      "AffectedTenantCount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "AffectedTenantCount"
+                      },
+                      "AffectedUserCount": {
+                        "type": "string",
+                        "description": "AffectedUserCount"
+                      },
+                      "Classification": {
+                        "type": "string",
+                        "description": "Classification"
+                      },
+                      "EndTime": {
+                        "type": "string",
+                        "description": "EndTime"
+                      },
+                      "Feature": {
+                        "type": "string",
+                        "description": "Feature"
+                      },
+                      "FeatureDisplayName": {
+                        "type": "string",
+                        "description": "FeatureDisplayName"
+                      },
+                      "UserFunctionalImpact": {
+                        "type": "string",
+                        "description": "UserFunctionalImpact"
+                      },
+                      "Id": {
+                        "type": "string",
+                        "description": "Id"
+                      },
+                      "ImpactDescription": {
+                        "type": "string",
+                        "description": "ImpactDescription"
+                      },
+                      "LastUpdatedTime": {
+                        "type": "string",
+                        "description": "LastUpdatedTime"
+                      },
+                      "MessageType": {
+                        "type": "string",
+                        "description": "MessageType"
+                      },
+                      "Messages": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "MessageText": {
+                              "type": "string",
+                              "description": "MessageText"
+                            },
+                            "PublishedTime": {
+                              "type": "string",
+                              "description": "PublishedTime"
+                            }
+                          }
+                        },
+                        "description": "Messages"
+                      },
+                      "PostIncidentDocumentUrl": {
+                        "type": "string",
+                        "description": "PostIncidentDocumentUrl"
+                      },
+                      "Severity": {
+                        "type": "string",
+                        "description": "Severity"
+                      },
+                      "StartTime": {
+                        "type": "string",
+                        "description": "StartTime"
+                      },
+                      "Title": {
+                        "type": "string",
+                        "description": "Title"
+                      },
+                      "@odata.type": {
+                        "type": "string",
+                        "description": "@odata.type"
+                      },
+                      "ActionRequiredByDate": {
+                        "type": "string",
+                        "description": "ActionRequiredByDate"
+                      },
+                      "AnnouncementId": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "AnnouncementId"
+                      },
+                      "Category": {
+                        "type": "string",
+                        "description": "Category"
+                      },
+                      "MessageTagNames": {
+                        "type": "array",
+                        "items": {},
+                        "description": "MessageTagNames"
+                      },
+                      "ExternalLink": {
+                        "type": "string",
+                        "description": "ExternalLink"
+                      },
+                      "IsDismissed": {
+                        "type": "boolean",
+                        "description": "IsDismissed"
+                      },
+                      "IsRead": {
+                        "type": "boolean",
+                        "description": "IsRead"
+                      },
+                      "IsMajorChange": {
+                        "type": "boolean",
+                        "description": "IsMajorChange"
+                      },
+                      "PreviewDuration": {
+                        "type": "string",
+                        "description": "PreviewDuration"
+                      },
+                      "AppliesTo": {
+                        "type": "string",
+                        "description": "AppliesTo"
+                      },
+                      "MilestoneDate": {
+                        "type": "string",
+                        "description": "MilestoneDate"
+                      },
+                      "Milestone": {
+                        "type": "string",
+                        "description": "Milestone"
+                      },
+                      "BlogLink": {
+                        "type": "string",
+                        "description": "BlogLink"
+                      },
+                      "HelpLink": {
+                        "type": "string",
+                        "description": "HelpLink"
+                      },
+                      "FlightName": {
+                        "type": "string",
+                        "description": "FlightName"
+                      },
+                      "FeatureName": {
+                        "type": "string",
+                        "description": "FeatureName"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Messages",
+        "description": "Get Service Incident, Planned Maintenance, or Message Center messages",
+        "operationId": "GetMessages",
+        "x-ms-visibility": "important",
+        "parameters": []
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "scopes": {}
+    }
+  },
+  "security": [
+    {
+      "oauth2_auth": []
+    }
+  ],
+  "tags": []
+}
